@@ -108,7 +108,7 @@ pwn.college{MgNGKiJxZWoAW_MsHjGNl-scyQD.dBTN4QDLyQzN0czW}
 ```
 ## Approach
 Checked the list of files in / using the ls command. The files were not dot-prepended. Used the ls -a command to list all files in the directory, including the ones dot-pretended. Now executed the cat command on .flag-15613129679998 file as cat /.flag-15613129679998 to read the file.<br>
-This returned the flag **pwn.college{84W0VUnaQqBB3Z4Qg9_WECxCmv_.dZTOwUDLyQzN0czW}**
+This returned the flag **pwn.college{MgNGKiJxZWoAW_MsHjGNl-scyQD.dBTN4QDLyQzN0czW}**
 ## Learning
 ls doesn't list all the files by default. Linux has a convention where files that start with a . don't show up by default in ls and in a few other contexts. Learnt to use the ls -a command to list hidden files in a directory, like dot-pretended files.
 # An Epic Filesystem Quest
