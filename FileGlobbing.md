@@ -81,10 +81,17 @@ This returned the flag **pwn.college{QFv7-sQ1vmBV_oKQUoVrFcVdwvT.dVjM4QDLyQzN0cz
 # Exclusionary globbing
 ## Code
 ```
-
+hacker@globbing~exclusionary-globbing:~$ ls /challenge/files
+amazing      delightful   great       jovial    magical     pwning   splendid   victorious  youthful
+beautiful    educational  happy       kind      nice        queenly  thrilling  wonderful   zesty
+challenging  fantastic    incredible  laughing  optimistic  radiant  uplifting  xenial
+hacker@globbing~exclusionary-globbing:~$ cd /challenge/files
+hacker@globbing~exclusionary-globbing:/challenge/files$ /challenge/run [^pwn]*
+You got it! Here is your flag!
+pwn.college{wvssRP6xWiPawrlrZdG-TmN2A8y.dZjM4QDLyQzN0czW}
 ```
 ## Approach
 .<br>
-This returned the flag ****
+This returned the flag **pwn.college{wvssRP6xWiPawrlrZdG-TmN2A8y.dZjM4QDLyQzN0czW}**
 ## Learning
 
