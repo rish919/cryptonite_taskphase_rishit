@@ -158,9 +158,10 @@ hacker@piping~redirecting-errors:~$ cat myflag
 [FLAG] pwn.college{gAqYH63kHuj43SjZWSweCr_6ugH.ddjN1QDLyQzN0czW}
 ```
 ## Approach
-.<br>
+Checked for files in challenge and home directory. Used the > character for input redirection from file /challenge/run to myflag. Use 2> command to redirect the standard error to instructions. Used cat instructions to read the feedback from instructions and cat myflag to read the flag.<br>
 This returned the flag **pwn.college{gAqYH63kHuj43SjZWSweCr_6ugH.ddjN1QDLyQzN0czW}**
 ## Learning
+When we redirect process communication, we do it by FD number, though some FD numbers are implicit. For example, a > without a number implies 1>, which redirects FD 1 (Standard Output). 2> redirects the standard error.
 
 # Redirecting input
 ## Code
@@ -174,9 +175,10 @@ Here is your flag:
 pwn.college{o5pKfUJo16JE5ESnZxG3oX1IUc8.dBzN1QDLyQzN0czW}
 ```
 ## Approach
-.<br>
+Redirected the word COLLEGE to PWN by using the echo COLLEGE > PWN command. Redirected the input to /challenge/run by using the command /challenge/run < PWN, having the < character.<br>
 This returned the flag **pwn.college{o5pKfUJo16JE5ESnZxG3oX1IUc8.dBzN1QDLyQzN0czW}**
 ## Learning
+We can redirect input to programs. This is done using < character.
 
 # Grepping stored results
 ## Code
@@ -203,9 +205,10 @@ hacker@piping~grepping-stored-results:~$ grep pwn.college /tmp/data.txt
 pwn.college{k39V1-a-_67fDvy0f-BXkifmvNx.dhTM4QDLyQzN0czW}
 ```
 ## Approach
-.<br>
+Redirected the output of /challenge/run to /tmp/data.txt. After displaying the feedback and success of all execution requirements, grepped for pwn.college in the /tmp/data.txt file using the command grep pwn.college /tmp/data.txt.<br>
 This returned the flag **pwn.college{k39V1-a-_67fDvy0f-BXkifmvNx.dhTM4QDLyQzN0czW}**
 ## Learning
+Learnt how to run commands, how to redirect their output (e.g., >), and how to search through the resulting file (e.g., grep) together.
 
 # Grepping live output
 ## Code
