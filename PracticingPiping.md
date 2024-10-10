@@ -295,19 +295,33 @@ This returned the flag **pwn.college{wSlxdv9R1yMFyc9yPpeG8W26zBF.dFjM5QDLyQzN0cz
 # Writing to multiple programs
 ## Code
 ```
-
+hacker@piping~writing-to-multiple-programs:~$ /challenge/hack | tee >(/challenge/the) | (/challenge/planet)
+Congratulations, you have duplicated data into the input of two programs! Here
+is your flag:
+pwn.college{kQtrDGZ9Obmcv3yEv3k247IfTVI.dBDO0UDLyQzN0czW}
 ```
 ## Approach
 .<br>
-This returned the flag ****
+This returned the flag **pwn.college{kQtrDGZ9Obmcv3yEv3k247IfTVI.dBDO0UDLyQzN0czW}**
 ## Learning
 
 # Split piping stderr and stdout
 ## Code
 ```
-
+hacker@piping~split-piping-stderr-and-stdout:~$ /challenge/hack | /challenge/planet 2> >(/challenge/the)
+You must redirect my standard error into '/challenge/the'!
+You are redirecting standard error *of /challenge/planet*! Instead, you must
+redirect standard error of 'hack'. This must be done *before* any |. The right
+side of the pipe is a different command, with its own redirection, than the
+left side!
+Are you sure you're properly redirecting /challenge/hack's standard error into
+'/challenge/the'?
+hacker@piping~split-piping-stderr-and-stdout:~$ /challenge/hack 2> >( /challenge/the ) | /challenge/planet
+Congratulations, you have learned a redirection technique that even experts
+struggle with! Here is your flag:
+pwn.college{I9vbEMeaJCgxMUuxvvvRgkWyCtT.dFDNwYDLyQzN0czW}
 ```
 ## Approach
 .<br>
-This returned the flag ****
+This returned the flag **pwn.college{I9vbEMeaJCgxMUuxvvvRgkWyCtT.dFDNwYDLyQzN0czW}**
 ## Learning
