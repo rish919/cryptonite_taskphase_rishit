@@ -7,10 +7,10 @@ flag:
 pwn.college{Q7gYbvcGOZkoAY1gEiNnr2QcqpK.dRjN1QDLyQzN0czW}
 ```
 ## Approach
-.<br>
+The given file name was COLLEGE where the word PWN needs to be inputted. This is done by redirecting stdout of PWN to the file using the > character.<br>
 This returned the flag **pwn.college{Q7gYbvcGOZkoAY1gEiNnr2QcqpK.dRjN1QDLyQzN0czW}**
 ## Learning
-
+Learnt input redirection using > character.
 # Redirecting more output
 ## Code
 ```
@@ -38,9 +38,10 @@ hacker@piping~redirecting-more-output:~$ cat myflag
 [FLAG] pwn.college{4-yjjV9sdQHICGv5GOht_WKaEB1.dVjN1QDLyQzN0czW}
 ```
 ## Approach
-.<br>
+Checked for files in challenge and home directory.Used the > character for input redirection from file /challenge/run to myflag.Used cat command to read the myflag file.<br>
 This returned the flag **pwn.college{4-yjjV9sdQHICGv5GOht_WKaEB1.dVjN1QDLyQzN0czW}**
 ## Learning
+Learnt input redirection from file path to files using > character.
 
 # Appending output
 ## Code
@@ -118,9 +119,11 @@ overwrote the initial write of the first half directly to the file. Try append
 mode!
 ```
 ## Approach
+Checked for files in challenge and home directory. Used the > character for input redirection from file /challenge/run to the-flag. Used cat command to read the file, which displayed only the second part. This indicated that the second part was overwritten on the existing first. Next, used the >> character for appending to the file the-flag from /challenge/run. The cat command to the-flag now showed both parts of the flag.
 .<br>
 This returned the flag **pwn.college{8iM1AjOX0Od3HhcENe-ZFxFP69Q.ddDM5QDLyQzN0czW}**
 ## Learning
+Learnt to use the >> character for appending to files in Linux.
 
 # Redirecting errors
 ## Code
