@@ -235,9 +235,10 @@ hacker@piping~grepping-live-output:~$ /challenge/run | grep pwn.college
 pwn.college{UgcrtNfBhZEjlu-HNtwxpVerGJ_.dlTM4QDLyQzN0czW}
 ```
 ## Approach
-.<br>
+Using the pipe operator grep for pwn.college in /challenge/run directly without creating a new file. This is done using the command /challenge/run | grep pwn.college.<br>
 This returned the flag **pwn.college{UgcrtNfBhZEjlu-HNtwxpVerGJ_.dlTM4QDLyQzN0czW}**
 ## Learning
+Standard output from the command to the left of the pipe will be connected to (piped into) the standard input of the command to the right of the pipe.
 
 # Grepping errors
 ## Code
@@ -264,9 +265,10 @@ hacker@piping~grepping-errors:~$ /challenge/run 2>&1 | grep pwn.college
 pwn.college{YwURPd-WjrAfhfzMxFvaBrd2vg_.dVDM5QDLyQzN0czW}
 ```
 ## Approach
-.<br>
+Normally, 2> is used to redirect standard error (file descriptor 2) to a file, but this time we need to redirect stderr to standard output. This can be done using 2>&1, which combines both stderr and stdout. After combining stderr and stdout, we pipe this combined output to grep to filter and find specific patterns, which in this case is pwn.college. This the command stands as /challenge/run 2>&1 | grep pwn.college.<br>
 This returned the flag **pwn.college{YwURPd-WjrAfhfzMxFvaBrd2vg_.dVDM5QDLyQzN0czW}**
 ## Learning
+>& operator redirects a file descriptor to another file descriptor. This means that we can have a two-step process to grep through errors: first, we redirect standard error to standard output (2>& 1) and then pipe the now-combined stderr and stdout as normal (|).
 
 # Duplicating piped data with tee
 ## Code
@@ -294,9 +296,11 @@ Great job! Here is your flag:
 pwn.college{wSlxdv9R1yMFyc9yPpeG8W26zBF.dFjM5QDLyQzN0czW}
 ```
 ## Approach
-.<br>
+Run the /challenge/pwn | /challenge/college to pipe the two programs directly, but the input to college did not contain the secret code. Then used 'tee' to 
+duplicate data flowing into the pipes to college by running tee college in the middle. Then run cat college to access the secret argument to /challenge/pwn. After getting the argument as wSlxdv9R, run the desired command challenge/pwn --secret wSlxdv9R | /challenge/college. <br>
 This returned the flag **pwn.college{wSlxdv9R1yMFyc9yPpeG8W26zBF.dFjM5QDLyQzN0czW}**
 ## Learning
+Learnt to use the tee command, which duplicates data flowing through your pipes to any number of files provided on the command line.
 
 # Writing to multiple programs
 ## Code
@@ -307,9 +311,10 @@ is your flag:
 pwn.college{kQtrDGZ9Obmcv3yEv3k247IfTVI.dBDO0UDLyQzN0czW}
 ```
 ## Approach
-.<br>
+The given file is /challenge/hack. Duplicated the output to inputs of /challenge/the and /challenge/planet by using the tee command in thie middle.<br>
 This returned the flag **pwn.college{kQtrDGZ9Obmcv3yEv3k247IfTVI.dBDO0UDLyQzN0czW}**
 ## Learning
+Learnt to write to multiple programs, by duplicating to two commands using tee command.
 
 # Split piping stderr and stdout
 ## Code
@@ -328,6 +333,7 @@ struggle with! Here is your flag:
 pwn.college{I9vbEMeaJCgxMUuxvvvRgkWyCtT.dFDNwYDLyQzN0czW}
 ```
 ## Approach
-.<br>
+Tried redirecting output from /challenge/hack to /challenge/planet and standard error of /challenge/planet to /challenge/the, but it showed an error as I was redirecting standard error of /challenge/planet instead of /challenge/hack. Run the command /challenge/hack 2> >( /challenge/the ) | /challenge/planet which correctly ensures the redirection order. Here, stderr is redirected to /challenge/the before the pipe, and stdout is sent to /challenge/planet via the pipe.<br>
 This returned the flag **pwn.college{I9vbEMeaJCgxMUuxvvvRgkWyCtT.dFDNwYDLyQzN0czW}**
 ## Learning
+Used combined knowledge of >(), 2>, and | and learnt to use them together for redirection.
