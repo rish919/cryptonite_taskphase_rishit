@@ -59,15 +59,12 @@ This returned the flag **pwn.college{wURELLVgGyRnei9T2fU0ejrgJ8S.ddTN0UDLyQzN0cz
 # Using sudo
 ## Code
 ```
-hacker@users~using-sudo:~$ ls -a
-.   .ICEauthority  .bash_logout  .cache   .dbus  .lesshst  .profile  Desktop  college       myflag        r
-..  .bash_history  .bashrc       .config  .john  .local    COLLEGE   PWN      instructions  not-the-flag  the-flag
-hacker@users~using-sudo:~$ sudo cat myflag
-
-[FLAG] Here is your flag:
-[FLAG] pwn.college{gAqYH63kHuj43SjZWSweCr_6ugH.ddjN1QDLyQzN0czW}
+hacker@users~using-sudo:~$ cat /flag
+cat: /flag: Permission denied
+hacker@users~using-sudo:~$ sudo cat /flag
+pwn.college{gmNzIwBaR8H5ibg85nStWfDwq8A.dhTN0UDLyQzN0czW}
 ```
 ## Approach
 .<br>
-This returned the flag **pwn.college{gAqYH63kHuj43SjZWSweCr_6ugH.ddjN1QDLyQzN0czW}**
+This returned the flag **pwn.college{gmNzIwBaR8H5ibg85nStWfDwq8A.dhTN0UDLyQzN0czW}**
 ## Learning
