@@ -151,32 +151,66 @@ pwn.college{oMlFp02zAucRmjhRQarvBzuW3i5.ddDN4QDLyQzN0czW}
 This returned the flag **pwn.college{oMlFp02zAucRmjhRQarvBzuW3i5.ddDN4QDLyQzN0czW}**
 ## Learning
 
-# 
+# Foregrounding Processes
 ## Code
 ```
+hacker@processes~foregrounding-processes:~$ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   1056   640 ?        Ss   06:58   0:00 /sbin/docker-init -- /nix/var/nix/profiles/default/bi
+root           7  0.0  0.0   5052  2240 ?        S    06:58   0:00 /run/dojo/bin/sleep 6h
+hacker        65  0.0  0.0   5372  3840 pts/0    Ss   06:58   0:00 /run/dojo/bin/ssh-entrypoint
+root          86  0.8  0.0   5788  2880 pts/0    S    06:59   0:00 bash /challenge/run
+root         956  0.0  0.0   4268  1600 pts/0    S    06:59   0:00 sleep 0.1
+hacker       957  0.0  0.0   7868  3200 pts/0    R+   06:59   0:00 ps aux
+hacker@processes~foregrounding-processes:~$ fg
+/challenge/run
+YES! Great job! I'm now running in the foreground. Hit Enter for your flag!
 
+pwn.college{wa1nI42kPOCr8QvvR9kEd-uFqHF.dhDN4QDLyQzN0czW}
 ```
 ## Approach
 .<br>
-This returned the flag ****
+This returned the flag **pwn.college{wa1nI42kPOCr8QvvR9kEd-uFqHF.dhDN4QDLyQzN0czW}**
 ## Learning
 
-# 
+# Starting Background Processes
 ## Code
 ```
+hacker@processes~starting-backgrounded-processes:~$ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.1  0.0   1056   640 ?        Ss   07:02   0:00 /sbin/docker-init -- /nix/var/nix/profiles/default/bi
+root           7  0.0  0.0   5052  2560 ?        S    07:02   0:00 /run/dojo/bin/sleep 6h
+hacker        65  0.1  0.0   5372  3840 pts/0    Ss   07:02   0:00 /run/dojo/bin/ssh-entrypoint
+hacker        82  0.0  0.0   7868  3200 pts/0    R+   07:02   0:00 ps aux
+hacker@processes~starting-backgrounded-processes:~$ /challenge/run &
+[1] 83
 
+
+
+Yay, you started me in the background! Because of that, this text will probably
+overlap weirdly with the shell prompt, but you're used to that by now...
+
+Anyways! Here is your flag!
+pwn.college{0yZ1zHZ06ZlcrCn0N18RvdWMvm3.dlDN4QDLyQzN0czW}
+[1]+  Done                    /challenge/run
 ```
 ## Approach
 .<br>
-This returned the flag ****
+This returned the flag **pwn.college{0yZ1zHZ06ZlcrCn0N18RvdWMvm3.dlDN4QDLyQzN0czW}**
 ## Learning
 
-# 
+# Process Exit Codes
 ## Code
 ```
-
+hacker@processes~process-exit-codes:~$ /challenge/get-code
+Exiting with an error code!
+hacker@processes~process-exit-codes:~$ echo $?
+225
+hacker@processes~process-exit-codes:~$ /challenge/submit-code 225
+CORRECT! Here is your flag:
+pwn.college{Yj7UwB93qFOFe79dd-eQ-o9MQ6u.dljN4UDLyQzN0czW}
 ```
 ## Approach
 .<br>
-This returned the flag ****
+This returned the flag **pwn.college{Yj7UwB93qFOFe79dd-eQ-o9MQ6u.dljN4UDLyQzN0czW}**
 ## Learning
